@@ -2,12 +2,12 @@ import inderpreet_singh from "../../public/cropped_circle_image.png"
 
 export const AboutUs = () => {
   return (
-     <main className="mt-10">
+     <main className="mt-10" id="about">
 
-            <div className="flex items-center justify-between py-4 shadow-md shadow-gray-200 rounded-lg">
+            <div className="flex items-center justify-between py-4 shadow-md shadow-gray-200 rounded-lg ">
               <div className="w-1/2 px-4">
                   <img src={inderpreet_singh} alt="Inderpreet Singh"
-                  className="w-[80%] h-[50%] object-cover rounded-xl " />
+                  className="w-[80%] h-[50%] object-cover rounded-xl  " />
               </div>
 
               <div className="w-1/2 px-4 text-lg">

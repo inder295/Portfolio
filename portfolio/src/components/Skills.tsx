@@ -1,57 +1,134 @@
-import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import SplitText from "gsap/SplitText";
+import framer from "../../public/framer-svgrepo-com.svg"
+import nodejs from "../../public/nodejs-icon-svgrepo-com.svg"
+import mongodb from "../../public/icons8-mongodb-24.png"
+import expressjs from "../../public/icons8-express-js-64.png"
+import postgress from "../../public/icons8-postgresql-24.png"
+import prisma from "../../public/icons8-prisma-orm-48.png"
+import jwt from "../../public/icons8-jwt.svg"
+import aws from "../../public/aws-svgrepo-com.svg"
+import docker from "../../public/docker-svgrepo-com.svg"
+import cicd from "../../public/cicd-svgrepo-com.svg"
+import playwright from "../../public/Playwright--Streamline-Svg-Logos.svg"
+import javascript from "../../public/javascript-svgrepo-com.svg"
+import c from "../../public/C-Plus-Language-Logo--Streamline-Logos.svg"
+import typescript from "../../public/typescript-official-svgrepo-com.svg"
+import phython from "../../public/python-svgrepo-com.svg"
+
 
 gsap.registerPlugin(SplitText);
 
 export function Skills() {
-  const headlineRef = useRef(null);
-  const splitRef = useRef<SplitText | null>(null);
-
-  useLayoutEffect(() => {
-    const ctx = gsap.context(() => {
-      document.fonts.ready.then(() => {
-        gsap.set(headlineRef.current, { opacity: 1 });
-
-        splitRef.current = SplitText.create(headlineRef.current, {
-          type: "words",
-          wordsClass: "word++",
-          ignore: "sup"
-        });
-
-        gsap.from(splitRef.current.words, {
-          y: -100,
-          opacity: 0,
-          rotation: "random(-80,80)",
-          stagger: 0.1,
-          duration: 1,
-          ease: "back"
-        });
-      });
-    }, headlineRef);
-
-    return () => {
-      ctx.revert();
-      if (splitRef.current) {
-        splitRef.current.revert();
-      }
-    };
-  }, []);
+  
 
   return (
-    <div className="mt-10 h-screen">
+    <div className="mt-10 h-screen max-w-md mx-auto " id="skills">
         <h1 className="text-3xl font-bold text-center mt-10 underline">Skills & Technologies</h1>
 
-        <div ref={headlineRef} style={{ opacity: 0 }} className="flex items-center gap-5">
-            <div  className="w-40 aspect-square text-2xl font-semibold bg-red-600 p-4 mt-10 rounded-lg ">
-              <p className="flex justify-center items-center h-full">React Js </p>
-            </div>
+        <div>
+            <h2 className="text-xl mt-8 font-bold">Frontend</h2>
+            <div className="flex space-x-8 mt-4 flex-wrap  ">
+                <div id="react js" className="hover:cursor-pointer ">
+                        <svg viewBox="0 0 128 128" className="w-10 h-10"><g fill="#61DAFB"><circle cx="64" cy="64" r="11.4"></circle><path d="M107.3 45.2c-2.2-.8-4.5-1.6-6.9-2.3.6-2.4 1.1-4.8 1.5-7.1 2.1-13.2-.2-22.5-6.6-26.1-1.9-1.1-4-1.6-6.4-1.6-7 0-15.9 5.2-24.9 13.9-9-8.7-17.9-13.9-24.9-13.9-2.4 0-4.5.5-6.4 1.6-6.4 3.7-8.7 13-6.6 26.1.4 2.3.9 4.7 1.5 7.1-2.4.7-4.7 1.4-6.9 2.3C8.2 50 1.4 56.6 1.4 64s6.9 14 19.3 18.8c2.2.8 4.5 1.6 6.9 2.3-.6 2.4-1.1 4.8-1.5 7.1-2.1 13.2.2 22.5 6.6 26.1 1.9 1.1 4 1.6 6.4 1.6 7.1 0 16-5.2 24.9-13.9 9 8.7 17.9 13.9 24.9 13.9 2.4 0 4.5-.5 6.4-1.6 6.4-3.7 8.7-13 6.6-26.1-.4-2.3-.9-4.7-1.5-7.1 2.4-.7 4.7-1.4 6.9-2.3 12.5-4.8 19.3-11.4 19.3-18.8s-6.8-14-19.3-18.8zM92.5 14.7c4.1 2.4 5.5 9.8 3.8 20.3-.3 2.1-.8 4.3-1.4 6.6-5.2-1.2-10.7-2-16.5-2.5-3.4-4.8-6.9-9.1-10.4-13 7.4-7.3 14.9-12.3 21-12.3 1.3 0 2.5.3 3.5.9zM81.3 74c-1.8 3.2-3.9 6.4-6.1 9.6-3.7.3-7.4.4-11.2.4-3.9 0-7.6-.1-11.2-.4-2.2-3.2-4.2-6.4-6-9.6-1.9-3.3-3.7-6.7-5.3-10 1.6-3.3 3.4-6.7 5.3-10 1.8-3.2 3.9-6.4 6.1-9.6 3.7-.3 7.4-.4 11.2-.4 3.9 0 7.6.1 11.2.4 2.2 3.2 4.2 6.4 6 9.6 1.9 3.3 3.7 6.7 5.3 10-1.7 3.3-3.4 6.6-5.3 10zm8.3-3.3c1.5 3.5 2.7 6.9 3.8 10.3-3.4.8-7 1.4-10.8 1.9 1.2-1.9 2.5-3.9 3.6-6 1.2-2.1 2.3-4.2 3.4-6.2zM64 97.8c-2.4-2.6-4.7-5.4-6.9-8.3 2.3.1 4.6.2 6.9.2 2.3 0 4.6-.1 6.9-.2-2.2 2.9-4.5 5.7-6.9 8.3zm-18.6-15c-3.8-.5-7.4-1.1-10.8-1.9 1.1-3.3 2.3-6.8 3.8-10.3 1.1 2 2.2 4.1 3.4 6.1 1.2 2.2 2.4 4.1 3.6 6.1zm-7-25.5c-1.5-3.5-2.7-6.9-3.8-10.3 3.4-.8 7-1.4 10.8-1.9-1.2 1.9-2.5 3.9-3.6 6-1.2 2.1-2.3 4.2-3.4 6.2zM64 30.2c2.4 2.6 4.7 5.4 6.9 8.3-2.3-.1-4.6-.2-6.9-.2-2.3 0-4.6.1-6.9.2 2.2-2.9 4.5-5.7 6.9-8.3zm22.2 21l-3.6-6c3.8.5 7.4 1.1 10.8 1.9-1.1 3.3-2.3 6.8-3.8 10.3-1.1-2.1-2.2-4.2-3.4-6.2zM31.7 35c-1.7-10.5-.3-17.9 3.8-20.3 1-.6 2.2-.9 3.5-.9 6 0 13.5 4.9 21 12.3-3.5 3.8-7 8.2-10.4 13-5.8.5-11.3 1.4-16.5 2.5-.6-2.3-1-4.5-1.4-6.6zM7 64c0-4.7 5.7-9.7 15.7-13.4 2-.8 4.2-1.5 6.4-2.1 1.6 5 3.6 10.3 6 15.6-2.4 5.3-4.5 10.5-6 15.5C15.3 75.6 7 69.6 7 64zm28.5 49.3c-4.1-2.4-5.5-9.8-3.8-20.3.3-2.1.8-4.3 1.4-6.6 5.2 1.2 10.7 2 16.5 2.5 3.4 4.8 6.9 9.1 10.4 13-7.4 7.3-14.9 12.3-21 12.3-1.3 0-2.5-.3-3.5-.9zM96.3 93c1.7 10.5.3 17.9-3.8 20.3-1 .6-2.2.9-3.5.9-6 0-13.5-4.9-21-12.3 3.5-3.8 7-8.2 10.4-13 5.8-.5 11.3-1.4 16.5-2.5.6 2.3 1 4.5 1.4 6.6zm9-15.6c-2 .8-4.2 1.5-6.4 2.1-1.6-5-3.6-10.3-6-15.6 2.4-5.3 4.5-10.5 6-15.5 13.8 4 22.1 10 22.1 15.6 0 4.7-5.8 9.7-15.7 13.4z"></path></g>
+                </svg>
+                </div>
 
-            <div  className="w-40 aspect-square text-2xl font-semibold bg-red-600 p-4 mt-10 rounded-lg">
-              <p className="flex justify-center items-center h-full">React Js </p>
-            </div>
+                <div id="next js" className="cursor-pointer">
+                      <svg viewBox="0 0 128 128" className="w-10 h-10"><circle cx="64" cy="64" r="64"></circle><path fill="url(#a)" d="M106.317 112.014 49.167 38.4H38.4v51.179h8.614v-40.24l52.54 67.884a64.216 64.216 0 0 0 6.763-5.209z"></path><path fill="url(#b)" d="M81.778 38.4h8.533v51.2h-8.533z"></path><defs><linearGradient id="a" x1="109" x2="144.5" y1="116.5" y2="160.5" gradientTransform="scale(.71111)" gradientUnits="userSpaceOnUse"><stop stop-color="#fff"></stop><stop offset="1" stop-color="#fff" stop-opacity="0"></stop></linearGradient><linearGradient id="b" x1="121" x2="120.799" y1="54" y2="106.875" gradientTransform="scale(.71111)" gradientUnits="userSpaceOnUse"><stop stop-color="#fff"></stop><stop offset="1" stop-color="#fff" stop-opacity="0"></stop></linearGradient></defs></svg>
+                </div>
 
+                <div id="tailwind css" className="hover:cursor-pointer ">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" className="h-10 w-10"><path d="M64.004 25.602c-17.067 0-27.73 8.53-32 25.597 6.398-8.531 13.867-11.73 22.398-9.597 4.871 1.214 8.352 4.746 12.207 8.66C72.883 56.629 80.145 64 96.004 64c17.066 0 27.73-8.531 32-25.602-6.399 8.536-13.867 11.735-22.399 9.602-4.87-1.215-8.347-4.746-12.207-8.66-6.27-6.367-13.53-13.738-29.394-13.738zM32.004 64c-17.066 0-27.73 8.531-32 25.602C6.402 81.066 13.87 77.867 22.402 80c4.871 1.215 8.352 4.746 12.207 8.66 6.274 6.367 13.536 13.738 29.395 13.738 17.066 0 27.73-8.53 32-25.597-6.399 8.531-13.867 11.73-22.399 9.597-4.87-1.214-8.347-4.746-12.207-8.66C55.128 71.371 47.868 64 32.004 64zm0 0" fill="#38bdf8"></path></svg>
+                </div>
+
+                <div id="framer motion" className="hover:cursor-pointer ">
+                    <img src={framer} alt="" className="h-10 w-10"/>
+                </div>
+
+
+               
+            
+            
+            </div>
         </div>
+
+        <div className="mt-10 ">
+            <h2 className="text-xl font-bold">Backend</h2>
+
+            <div className="flex space-x-8 mt-4 flex-wrap ">
+                   <div id="node js">
+                <img src={nodejs} alt="Node.js" className="h-10 w-10 hover:cursor-pointer" />
+               
+            </div>
+            <div id="express js">
+                <img src={expressjs} alt="Express.js" className="h-10 w-10 hover:cursor-pointer" />
+            </div>
+            <div id="mongodb">
+                <img src={mongodb} alt="MongoDB" className="h-10 w-10 hover:cursor-pointer" />
+            </div>
+            <div id="postgresql">
+                <img src={postgress} alt="PostgreSQL" className="h-10 w-10 hover:cursor-pointer" />
+            </div>
+            <div id="Prisma">
+                <img src={prisma} alt="Prisma" className="h-10 w-10 hover:cursor-pointer" />
+            </div>
+            <div id="jwt">
+                <img src={jwt} alt="JWT" className="h-10 w-10 hover:cursor-pointer" />
+            </div>
+            </div>
+
+           
+        </div>
+
+        <div className="mt-10">
+            <h2 className="text-xl font-bold">Devops</h2>
+            <div className="flex space-x-8 mt-4 flex-wrap">
+                <div id="aws">
+                    <img src={aws} alt="aws" className="h-10 w-10 hover:cursor-pointer" />
+                </div>
+                <div id="docker">
+                    <img src={docker} alt="docker" className="h-10 w-10 hover:cursor-pointer" />
+                </div>
+                <div id="cicd">
+                    <img src={cicd} alt="CICD" className="h-10 w-10 hover:cursor-pointer" />
+                </div>
+            </div>
+        </div>
+
+        <div className="mt-10">
+            <h2 className="text-xl font-bold">Testing </h2>
+            <div className="flex space-x-8 mt-4 flex-wrap">
+                <div id="playwright">
+                    <img src={playwright} alt="Playwright" className="h-10 w-10 hover:cursor-pointer" />
+                </div>
+                
+            </div>
+        </div>
+
+         <div className="mt-10">
+            <h2 className="text-xl font-bold">Languages </h2>
+            <div className="flex space-x-8 mt-4 flex-wrap">
+                <div id="JavaScript">
+                    <img src={javascript} alt="JavaScript" className="h-10 w-10 hover:cursor-pointer" />
+                </div>
+
+                <div id="Typescript">
+                    <img src={typescript} alt="Typescript" className="h-10 w-10 hover:cursor-pointer" />
+                </div>
+
+                <div id="C++">
+                    <img src={c} alt="C++" className="h-10 w-10 hover:cursor-pointer" />
+                </div>
+
+                <div id="Phython">
+                    <img src={phython} alt="Phython" className="h-10 w-10 hover:cursor-pointer" />
+                </div>
+                
+            </div>
+        </div>
+
+
 
     </div>
   );

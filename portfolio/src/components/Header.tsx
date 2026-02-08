@@ -1,15 +1,17 @@
 import Github from "./Github"
+import geeks from "../../public/geeksforgeeks-svgrepo-com.svg"
+import leetcode from "../../public/leetcode.png"
 
 export const Header = () => {
   return (
    <header className="flex items-center justify-between py-4">
-              <h1 className="text-2xl font-bold">Inderpreet Singh</h1>
+             
 
-              <div className="flex space-x-4 hover:cursor-pointer ">
-                  <p className="hover:text-red-700">About</p>
-                  <p className="hover:text-red-700">Project</p>
-                  <p className="hover:text-red-700">Skills</p>
-                  <p className="hover:text-red-700">Contact</p>
+              <div className="flex space-x-6 hover:cursor-pointer">
+                 <a href="#about"> <p className="hover:text-red-700">About</p> </a>
+                  <a href="#projects"> <p className="hover:text-red-700">Project</p> </a>
+                  <a href="#skills"> <p className="hover:text-red-700">Skills</p> </a>
+                  <a href="#contact"> <p className="hover:text-red-700">Contact</p> </a>
               </div>
 
               <div className="flex space-x-4">
@@ -23,6 +25,15 @@ export const Header = () => {
 
                    </div>
                    <Github/>
+
+                   <div className="hover:cursor-pointer">
+                      <img src={geeks} alt="GeeksforGeeks" className="w-10 h-10"/>
+                   </div>
+                   
+                   <div className="hover:cursor-pointer">
+                      <img src={leetcode} alt="Leetcode" className="w-10 h-10"/>
+                   </div>
+
                  
               </div>
                
