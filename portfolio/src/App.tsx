@@ -1,4 +1,5 @@
 import { AboutUs } from "./components/AboutUs"
+import { Background } from "./components/Background"
 import { ContactUs } from "./components/ContactUs"
 import { Footer } from "./components/footer"
 import Header from "./components/Header"
@@ -12,6 +13,7 @@ function App() {
     <>
        <div className="max-w-screen-xl mx-auto font-serif">
            <Header/>
+           <Background/>
            <AboutUs/>
            <Projects/>
            <Skills/>

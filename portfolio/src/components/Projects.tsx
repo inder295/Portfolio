@@ -2,6 +2,7 @@ import { useState } from "react"
 import eccomerce from "../../public/eccomerce.png"
 import eccomerce_pdp from "../../public/eccomerce_pdp.png"
 import Github from "./Github"
+import { motion } from "framer-motion"
 
 export const Projects = () => {
 
@@ -10,10 +11,21 @@ export const Projects = () => {
     const skills=["React Js","Express Js","Postgress Sql","Tailwind CSS","JavaScript","Stripe Api","Cloudinary Api","JWT"]
     return (
          <section className="m-10" id="projects">
-            <h1 className="text-3xl font-bold text-center mt-10 underline">My Projects</h1>
+            <motion.h1 
+            className="text-3xl font-bold text-center mt-10 underline"
+            initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true, amount: 0.3 }}
+        >My Projects</motion.h1>
 
-            <div className="mt-10 ">
-               <div className="w-lg mt-10 shadow-md shadow-gray-200 rounded-lg p-4 hover:scale-105 transition-transform duration-300 hover:shadow-xl hover:bg-gray-50">
+            <motion.div className="mt-10 "
+             >
+               <motion.div className="w-lg mt-10 shadow-md shadow-gray-200 rounded-lg p-4 hover:scale-105 transition-transform duration-300 hover:shadow-xl hover:bg-gray-50"
+               initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true, amount: 0.3 }}>
                 <img src={isHover ? eccomerce_pdp : eccomerce} alt="E-commerce Project"
                     onMouseEnter={()=>{setIsHover(true)}}
                     onMouseLeave={()=>{setIsHover(false)}}
@@ -32,10 +44,10 @@ export const Projects = () => {
                     <button><Github/></button>    
                     </div>  
 
-                </div>     
+                </motion.div>     
 
                 
-            </div>      
+            </motion.div>      
 
            </section>  
     )

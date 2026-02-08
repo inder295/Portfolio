@@ -2,7 +2,7 @@ import React from 'react'
 
 export const Github = () => {
   return (
-    <div id="github" className="hover:cursor-pointer py-2">
+    <div id="github" className="hover:cursor-pointer py-2 transform-transition duration-300 hover:scale-110">
 
                     <span className="[&>svg]:h-7 [&>svg]:w-7 [&>svg]:fill-[#333]">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">

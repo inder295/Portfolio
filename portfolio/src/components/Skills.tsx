@@ -15,7 +15,7 @@ import javascript from "../../public/javascript-svgrepo-com.svg"
 import c from "../../public/C-Plus-Language-Logo--Streamline-Logos.svg"
 import typescript from "../../public/typescript-official-svgrepo-com.svg"
 import phython from "../../public/python-svgrepo-com.svg"
-
+import { motion } from "framer-motion"
 
 gsap.registerPlugin(SplitText);
 
@@ -23,9 +23,23 @@ export function Skills() {
   
 
   return (
-    <div className="mt-10 h-screen max-w-md mx-auto " id="skills">
-        <h1 className="text-3xl font-bold text-center mt-10 underline">Skills & Technologies</h1>
+    <div className="mt-24 max-w-md mx-auto " id="skills">
+        <motion.h1 
+        className="text-3xl font-bold text-center mt-10 underline"
+         initial={{ opacity: 0, x: 50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true, amount: 0.3 }}
+        >Skills & Technologies</motion.h1>
+      <motion.div
+      className=""
+         initial={{ opacity: 0, x: 50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true, amount: 0.3 }}
+      >
 
+      
         <div>
             <h2 className="text-xl mt-8 font-bold">Frontend</h2>
             <div className="flex space-x-8 mt-4 flex-wrap  ">
@@ -127,6 +141,7 @@ export function Skills() {
                 
             </div>
         </div>
+    </motion.div>    
 
 
 

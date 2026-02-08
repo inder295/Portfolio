@@ -1,10 +1,21 @@
+import { motion } from "framer-motion"
 
 export const ContactUs = () => {
   return (
-    <section className='mb-20 ' id="contact">
-      <h1 className="text-3xl font-bold text-center mt-10 underline">Contact Me</h1>
+    <section className='mb-20 mt-20' id="contact">
+      <motion.h1 className="text-3xl font-bold text-center mt-10 underline"
+       initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true, amount: 0.3 }}
+        >Contact Me</motion.h1>
 
-      <form className='max-w-sm mx-auto mt-10'>
+      <motion.form className='max-w-sm mx-auto mt-10'
+       initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true, amount: 0.3 }}>
+
            <div className='mt-4'>
             <label htmlFor="name" className="block mb-2.5 text-sm font-medium text-heading">Name</label>
             <input type="text" id="name" className="bg-gray-100 border border-default-medium text-heading text-sm rounded-lg focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body" placeholder="John" required />
@@ -33,7 +44,7 @@ export const ContactUs = () => {
 
         
 
-      </form>
+      </motion.form>
     </section>
   )
 }
