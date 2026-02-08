@@ -41,8 +41,10 @@ export const Projects = () => {
                    </div>
                     <div className="flex space-x-4 justify-between mt-8">
                     <button className="px-3 text-sm text-black bg-green-100 hover:bg-green-200 rounded-xl cursor-pointer hover:underline ">Demo Link</button>
-                    <button><Github/></button>    
-                    </div>  
+                     <a href="https://github.com/inder295/Ecommerce.git">
+                    <button><Github/></button> 
+                    </a>   
+                    </div> 
 
                 </motion.div>     
 

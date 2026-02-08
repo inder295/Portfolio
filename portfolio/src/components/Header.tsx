@@ -15,6 +15,7 @@ export const Header = () => {
               </div>
 
               <div className="flex space-x-4 ">
+                <a href="https://www.linkedin.com/in/inderpreet-singh-a2a5a2249/">
                    <div id="linkedin" className="hover:cursor-pointer transform-transition duration-300 hover:scale-110 ">
                                       <button className="w-10 h-10 hover:cursor-pointer flex items-center justify-center rounded-lg bg-white shadow-md shadow-gray-200 group transition-all duration-300">
                 <svg className="rounded-md transition-all duration-300 group-hover:scale-110" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 72 72" fill="none">
@@ -23,15 +24,24 @@ export const Header = () => {
 </button>
 
 
+
                    </div>
+                    </a>
+
+                   <a href="https://github.com/inder295">
                    <Github />
+                   </a>
 
                    <div className="hover:cursor-pointer transform-transition duration-300 hover:scale-110">
+                    <a href="https://www.geeksforgeeks.org/profile/inderpreetsingh2017?tab=activity">
                       <img src={geeks} alt="GeeksforGeeks" className="w-10 h-10"/>
+                      </a>
                    </div>
                    
                    <div className="hover:cursor-pointer transform-transition duration-300 hover:scale-110">
+                    <a href="https://leetcode.com/u/inderpreet2017/">
                       <img src={leetcode} alt="Leetcode" className="w-10 h-10"/>
+                      </a>
                    </div>
 
                  
