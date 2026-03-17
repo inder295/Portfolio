@@ -1,5 +1,3 @@
-import React from 'react'
-
 export const Github = () => {
   return (
     <div id="github" className="hover:cursor-pointer py-2 transform-transition duration-300 hover:scale-110">
@@ -12,7 +10,7 @@ export const Github = () => {
   </svg>
 </span>
 
-                   </ div>
+                   </div>
   )
 }
 
