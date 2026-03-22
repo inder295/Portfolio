@@ -46,7 +46,9 @@ export const Projects = () => {
                     }
                    </div>
                     <div className="flex items-center justify-between mt-6">
+                    <a href="https://ecommerce-qd6q.onrender.com/">
                       <button className="px-3 py-2 text-sm text-black bg-green-100 hover:bg-green-200 rounded-xl cursor-pointer hover:underline">Demo Link</button>
+                    </a>  
                       <a href="https://github.com/inder295/Ecommerce.git">
                         <button><Github/></button>
                       </a>
